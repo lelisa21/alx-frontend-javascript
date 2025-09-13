@@ -15,6 +15,10 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string;
 }
 
+function printTeacher(firstName: string, lastName: string): string {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
+
 interface StudentConstructor {
     new (firstName: string, lastName: string): StudentClassInterface;
 }
@@ -56,10 +60,6 @@ const director1: Director = {
     location: 'London',
     fullTimeEmployee: true,
     numberOfReports: 17,
-};
-
-const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
-    return `${firstName.charAt(0)}. ${lastName}`;
 };
 
 const student = new StudentClass("Alice", "Johnson");
