@@ -15,10 +15,9 @@ interface printTeacherFunction {
     (firstName: string, lastName: string): string;
 }
 
-// CHANGE: Use parameter destructuring {firstName, lastName}
+
 function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string {
-    // CHANGE: Use exact return pattern with firstName and lastName
-    return `${firstName}. ${lastName}`;
+    return `${firstName.charAt(0)}. ${lastName}`;
 }
 
 interface StudentConstructor {
@@ -30,7 +29,8 @@ interface StudentClassInterface {
     displayName(): string;
 }
 
-class StudentClass implements StudentClassInterface {
+
+class StudentClass {
     private firstName: string;
     private lastName: string;
 
@@ -71,4 +71,5 @@ console.log(teacher3);
 console.log(director1);
 console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
 console.log(student.displayName()); 
+
 console.log(student.workOnHomework());
